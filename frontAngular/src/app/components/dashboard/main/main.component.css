@@ -1,0 +1,27 @@
+.counter {
+    font-size: 24px;
+    font-weight: 100
+}
+.white-box{
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    
+}
+.white-box .box-title {
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 18px;
+}
+tbody td{
+    color: #3e5569;
+}
+.fa-external-link{
+    color: rgb(0, 149, 255);
+}
+.fa-external-link:hover{
+    color: black;
+}
+#archive_filter{
+    background-color: rgb(228, 242, 248);
+}

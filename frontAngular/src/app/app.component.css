@@ -1,0 +1,18 @@
+.main-decrease{
+    margin-left: 9%;
+    margin-right: 3%;
+}
+.main-increase{
+    margin-left: 23%;
+    margin-right: 1%;
+}
+.main-app{
+    background-color: rgb(228, 242, 248);
+    height: 100%;
+}
+.footer-increase{
+    margin-left: 350px;
+}
+.navbar-increase{
+    margin-left: 280px;
+}

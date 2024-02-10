@@ -1,0 +1,17 @@
+<ng-container *ngIf="loggedIn">
+  <app-navbar [role]="role" [collapsed]='sideNav.collapsed'></app-navbar>
+  <app-sidebar (onToggleSideNav)=" handleCollapsedChange($event)" [loggedIn]="loggedIn" [role]="role"></app-sidebar>
+</ng-container>
+
+<div class="main-app">
+  <div [@mainAnimation]='sideNav.collapsed && loggedIn ? "main-increase" : "main-decrease"' class="p-3">
+  <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div [@mainAnimation]="sideNav.collapsed && loggedIn ? 'footer-increase' : '*'" *ngIf="loggedIn">
+  <app-footer ></app-footer>
+
+</div>
+
+

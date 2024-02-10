@@ -1,0 +1,25 @@
+
+<div [formGroup]="documentForm" class="subformulaire mb-2">
+    <h5 class="text-center">Plus d'informations sur l'attestation de bourse</h5>
+
+    <div class="my-1">
+        <label for="annee">Année</label>
+        <input type="date" id="annee" formControlName="annee" class="form-control p-0" />
+    </div>
+
+    <div class="my-1">
+        <label for="lieu_de_naissance">Lieu de Naissance</label>
+        <input type="text" id="lieu_de_naissance" formControlName="lieu_de_naissance" class="form-control p-0" />
+    </div>
+
+    <div class="form-group my-1">
+        <label for="type_bourse">Type de Bourse</label>
+        <div class="col-sm-12">
+            <select class="form-select shadow-none p-0 form-control" id="type_bourse"  name="session" required  formControlName="type_bourse">
+                <option value="demi_bourse">Demi Bourse</option>
+                <option value="bourse_complete">Bourse Complète</option>
+            </select>
+        </div>
+    </div>
+
+</div>

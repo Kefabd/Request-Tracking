@@ -1,0 +1,75 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">
+          <img src="../../assets/ensam-mini.png" alt="">
+        </button>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">
+          ENSAM Casablanca
+        </div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fa fa-times close-icon"></i>
+        </button>
+    </div>
+    <div class="scrollwrap scrollwrap_delayed">
+        <ul class="sidenav-nav">
+            <li class="sidenav-nav-item my-3" *ngFor="let data of navData">
+                <a class="sidenav-nav-link" 
+                    *ngIf="data.condition"
+                    [routerLink]="[data.routeLink]" 
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    (click)="shrinkItems(data)"
+                    >
+                    <i class="sidenav-link-icon" [class]="data.icon"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                        {{data.label}}
+                    </span>
+                </a>
+            </li>
+
+            <li class="sidenav-nav-item ps-1 my-3">
+                <a class="sidenav-nav-link" 
+                routerLink="/form" 
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                *ngIf="role === 'etudiant'"
+                    >
+                    <i class="sidenav-link-icon" ngClass="fa-solid fa-file-pen"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                        Faire une demande
+                    </span>
+                </a>
+            </li>
+
+            <!-- <li class="sidenav-nav-item my-3">
+                <a class="sidenav-nav-link" 
+                    routerLink="/form" 
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    *ngIf="role === 'etudiant'"
+                    >
+                    <i class="sidenav-link-icon" class="fa-solid fa-file-pen"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                        Faire une demande
+                    </span>
+                </a>
+            </li> -->
+
+            <li class="sidenav-nav-item ps-1 mt-5">
+                <a class="sidenav-nav-link" 
+                    (click) = "logOut()"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    *ngIf="loggedIn"
+                    >
+                    <i class="sidenav-link-icon" ngClass = "fas fa-sign-out-alt"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                        Logout
+                    </span>
+                </a>
+            </li>
+            
+        </ul>
+       
+</div>
+</div>

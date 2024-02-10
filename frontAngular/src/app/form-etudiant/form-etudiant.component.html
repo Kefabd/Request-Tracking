@@ -1,0 +1,118 @@
+<!-- <div class="login-box ">
+  <form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+    <h1>Infos personnelles</h1>
+
+    <label for="niveau"><b>Niveau</b></label>
+    <select formControlName="niveau">
+      <option *ngFor="let niveau of niveaux" [value]="niveau">{{ niveau }}</option>
+    </select>
+    <label for="filiere"><b>Filière</b></label>
+    <select formControlName="filiere">
+      <option *ngFor="let filiere of filieres" [value]="filiere">{{ filiere }}</option>
+    </select>
+
+    <label for="type_document"><b>Type de Document</b></label>
+    <select formControlName="type_document">
+      <option *ngFor="let type of typesDocuments" [value]="type">{{ type }}</option>
+    </select>
+
+    <label for="description"><b>Description</b></label>
+    <textarea formControlName="description"></textarea>
+
+    <app-formulaire-attestation-bourse *ngIf="getSelectedDocumentType() === 'Attestation De Bourse'"
+      [documentForm]="documentForm"></app-formulaire-attestation-bourse>
+    <app-formulaire-certificat-scolarite *ngIf="getSelectedDocumentType() === 'Certificat De Scolarite'"
+      [certificatScolariteForm]="documentForm"></app-formulaire-certificat-scolarite>
+    <app-formulaire-convention-stage *ngIf="getSelectedDocumentType() === 'Convention De Stage'"
+      [conventionStageForm]="documentForm"></app-formulaire-convention-stage>
+
+    <app-formulaire-releve-notes *ngIf="getSelectedDocumentType() === 'Releve De Notes'"
+      [releveNotesForm]="documentForm"></app-formulaire-releve-notes>
+    <app-formulaire-terrain-sport *ngIf="getSelectedDocumentType() === 'Terrain De Sport'"
+      [terrainSportForm]="documentForm"></app-formulaire-terrain-sport>
+
+
+    <button type="submit" [disabled]="!documentForm.valid">Soumettre</button>
+  </form>
+</div> -->
+<div class="page-wrapper">
+  <div class="container-fluid">
+   
+    <div class="row">
+      <div class="col-lg-10 col-xlg-10 col-md-10 w-80 mx-auto">
+        <div class="card">
+          <div class="card-body">
+
+            <form [formGroup]="documentForm" (ngSubmit)="onSubmit()" class="form-horizontal form-material">
+
+              <div class="form-group mb-4">
+                <label class="col-sm-12">Niveau</label>
+                <div class="col-sm-12 ">
+                  <select class="form-select shadow-none p-0 form-control" name="niveau" required
+                    formControlName="niveau">
+                    <option *ngFor="let niveau of niveaux" [value]="niveau">{{ niveau }}</option>
+
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="form-group mb-4">
+                <label class="col-sm-12">Filiére</label>
+                <div class="col-sm-12 ">
+                  <select class="form-select shadow-none p-0  form-control" name="filiere" required
+                    formControlName="filiere">
+                    <option *ngFor="let filiere of filieres" [value]="filiere">{{ filiere }}</option>
+
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="form-group mb-4">
+                <label class="col-sm-12">Type de Document</label>
+                <div class="col-sm-12">
+                  <select class="form-select shadow-none p-0 form-control" name="type" required
+                    formControlName="type_document">
+                    <option *ngFor="let type of typesDocuments" [value]="type">{{ type }}</option>
+
+                  </select>
+                </div>
+              </div>
+
+              <app-formulaire-attestation-bourse *ngIf="getSelectedDocumentType() === 'Attestation De Bourse'"
+                [documentForm]="documentForm" @fadeInOut></app-formulaire-attestation-bourse>
+
+              <app-formulaire-certificat-scolarite *ngIf="getSelectedDocumentType() === 'Certificat De Scolarite'"
+                [certificatScolariteForm]="documentForm" @fadeInOut></app-formulaire-certificat-scolarite>
+
+              <app-formulaire-convention-stage *ngIf="getSelectedDocumentType() === 'Convention De Stage'"
+                [conventionStageForm]="documentForm" @fadeInOut></app-formulaire-convention-stage>
+
+              <app-formulaire-releve-notes *ngIf="getSelectedDocumentType() === 'Releve De Notes'"
+                [releveNotesForm]="documentForm" @fadeInOut></app-formulaire-releve-notes>
+
+              <app-formulaire-terrain-sport *ngIf="getSelectedDocumentType() === 'Terrain De Sport'"
+                [terrainSportForm]="documentForm" @fadeInOut></app-formulaire-terrain-sport>
+
+
+              <div class="form-group mb-4">
+                <label class="col-md-12 p-0">Description</label>
+                <div class="col-md-12 p-0">
+                  <textarea type="text" placeholder="Décrivez ce que vous demandez" class="form-control p-0"
+                    name="prenom" required formControlName="description"></textarea>
+                </div>
+              </div>
+
+
+              <div class="form-group mb-4">
+                <div class="col-sm-12">
+                  <button type="submit" [disabled]="!documentForm.valid">Soumettre</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

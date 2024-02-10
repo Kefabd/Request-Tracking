@@ -1,0 +1,24 @@
+.white-box{
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.moreInfo{
+    background-color: rgb(228, 242, 248);
+    max-width: 85%;
+    border-radius: 20px;
+}
+button.btn{
+    margin-left: 250px;
+}
+.arrow-bottom{
+    font-size: 1.7em;
+    color: rgb(0, 149, 255);
+}
+.arrow-bottom:hover{
+    color: black;
+}
+tbody td{
+    color: #3e5569;
+}

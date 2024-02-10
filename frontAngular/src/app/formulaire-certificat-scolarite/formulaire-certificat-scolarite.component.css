@@ -1,0 +1,31 @@
+
+select, textarea ,input{
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgb(228, 242, 248);
+}
+.subformulaire{
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  background-color: rgb(228, 242, 248);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 1px solid #ccc; 
+  border-radius: 0px;
+  box-shadow: none; 
+}
+
+/* Style lorsqu'un input est en focus */
+.form-control:focus {
+  border-bottom: 2.5px solid #28a745; /* Couleur de la bordure inférieure lorsque l'input est en focus */
+  background: none;
+}
+
+.form-select option{
+background: rgb(228, 242, 248);
+}

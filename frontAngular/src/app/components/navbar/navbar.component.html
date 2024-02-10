@@ -1,0 +1,10 @@
+<nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-logo" [@navAnimation]="collapsed ? 'increase' : 'decrease'">Portail de gestion des demandes</a>
+      <div style="width: 15%;display: flex;flex-direction: row; justify-content: end; align-items: center;">
+        <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Login</a>
+        <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn"><button type="button" class="btn btn-danger">Logout</button></a>
+        <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn && role=='etudiant'"><img src="../../../assets/img_avatar3.png" alt=""></a>
+      </div>
+    </div>
+  </nav>

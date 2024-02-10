@@ -1,0 +1,22 @@
+.navbar{
+    border-bottom: 1px solid black;
+}
+.navbar-logo{
+    /* margin-left: 320px; */
+    text-decoration: none;
+    color: black;
+}
+.navbar-brand img{
+    width: 50px;
+    border-radius: 50px;
+}
+.navbar .container-fluid{
+    display: flex;
+    justify-content: space-between;
+}
+.increase{
+    margin-left: 310px;
+}
+.decrease{
+    margin-left: 90px;
+}

@@ -1,0 +1,79 @@
+<!-- <p>profile works!</p>
+<div *ngIf="username">
+    <p>Welcome, {{ username }} {{userprenom}}!</p>
+  </div> -->
+  <div *ngIf="etudiantData">
+    <!-- <form>
+      <label for="cne">CNE:</label>
+      <input type="text" id="cne" [(ngModel)]="etudiantData.cne" name="cne" disabled>
+        <br/>
+      <label for="codeApogee">Code Apogee:</label>
+      <input type="text" id="codeApogee" [(ngModel)]="etudiantData.code_apogee" name="codeApogee" disabled>
+        <br/>
+      <label for="image">Image:</label>
+      <img [src]="etudiantData.image" alt="Image de l'étudiant" />
+        <br/>
+      <label for="tel">Téléphone:</label>
+      <input type="text" id="tel" [(ngModel)]="etudiantData.tel" name="tel" disabled>
+        <br/>
+      <label for="datenais">Date de naissance:</label>
+      <input type="text" id="datenais" [(ngModel)]="etudiantData.datenais" name="datenais" disabled>
+  
+  
+    </form> -->
+    <div class="mt-4 col-8 offset-2">
+        <div class="card">
+            <div class="card-header">Profile de {{userprenom}}</div>
+            <div class="card-body">
+                <form>
+                    <div class="row mb-3">
+                        <label for="cne" class="col-sm-2 col-form-label">Nom complet</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="nom" class="form-control" id="nom" placeholder="Nom complet"
+                          [value]="etudiantData.user.nom + ' ' + etudiantData.user.prenom"  disabled>
+                        </div>
+                      </div>
+                    <div class="row mb-3">
+                      <label for="cne" class="col-sm-2 col-form-label">CNE</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="cne" class="form-control" id="cne" placeholder="CNE"
+                        [(ngModel)]="etudiantData.cne" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="codeApogee" class="col-sm-2 col-form-label">Code Apogee:</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="codeApogee" class="form-control" id="codeApogee"  placeholder="Code Apogee"
+                        [(ngModel)]="etudiantData.code_apogee"  disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="image" class="col-sm-2 col-form-label">Image:</label>
+                        <div class="col-sm-10">
+                            <img [src]="etudiantData.image" alt="Image de l'étudiant" width="100px" height="100px"/>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="tel" class="col-sm-2 col-form-label">Téléphone:</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="tel" class="form-control" id="tel"  placeholder="Tel"
+                          [(ngModel)]="etudiantData.tel"  disabled>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="datenais" class="col-sm-2 col-form-label">Date de naissance:</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="datenais" class="form-control" id="datenais"  placeholder="datenais"
+                          [(ngModel)]="etudiantData.datenais"  disabled>
+                        </div>
+                      </div>
+                    <div class="row mb-3">
+                      <div class="col-sm-10 offset-sm-2">
+    
+                      </div>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+  </div>

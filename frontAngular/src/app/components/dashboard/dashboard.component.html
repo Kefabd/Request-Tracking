@@ -1,0 +1,17 @@
+<div class="row justify-content-center ">
+    <ng-container *ngIf="role === 'admin';else etudiantBlock">
+        <app-total class="col-lg-4 col-md-12 mt-5"></app-total>
+        <app-approuved class="col-lg-4 col-md-12 mt-5"></app-approuved>
+        <app-pending class="col-lg-4 col-md-12 mt-5"></app-pending>
+
+    </ng-container>
+    
+    <ng-template #etudiantBlock>
+        <app-total2 class="col-lg-4 col-md-12 mt-5"></app-total2>
+        <app-approuved2 class="col-lg-4 col-md-12 mt-5"></app-approuved2>
+        <app-pending2 class="col-lg-4 col-md-12 mt-5"></app-pending2>
+    </ng-template>
+</div>
+
+<app-main-dashboard *ngIf="role === 'admin'"></app-main-dashboard>
+<app-main-dashboard2 *ngIf="role==='etudiant'"></app-main-dashboard2>

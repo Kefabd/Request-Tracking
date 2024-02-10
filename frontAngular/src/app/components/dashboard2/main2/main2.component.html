@@ -1,0 +1,62 @@
+<div class="row my-5">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="white-box">
+            <div class="d-md-flex mb-3">
+                <h3 class="box-title mb-0">Demandes</h3>
+                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                    <form id="filterForm">
+                        <select name="archive_filter" id="archive_filter" class="form-select shadow-none row border-top"
+                        [(ngModel)]="selectedState" (change)="onFilterChange()">
+                            <option value="" disabled selected>Filtrer</option>
+                            <option value="all">Tous</option>
+                            
+                            <option value="Traitee">Traités</option>
+                            <option value="En Cours">En Cours</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table no-wrap">
+                    <thead>
+                        <tr class="text-center">
+                            <th class="border-top-0">Référence</th>
+                            <th class="border-top-0">statut</th>
+                            <th class="border-top-0">type</th>
+                            <th class="border-top-0">description</th>
+                            <th class="border-top-0">niveau</th>
+                            <th class="border-top-0">filiere</th>
+                            <th class="border-top-0">année</th>
+                            <th class="border-top-0">View more</th>
+                        </tr>
+                    </thead>
+                    <ng-container *ngIf="demandes && demandes.length > 0; else elseBlock">
+                        <tbody *ngFor="let demande of demandes">
+
+                            <tr class="text-center">
+                                <td>{{demande.id}}</td>
+                                <td>{{demande.etat}}</td>
+                                <td>{{demande.type_document}}</td>
+                                <td>{{demande.description}}</td>
+                                <td>{{demande.niveau}}</td>
+                                <td>{{demande.filiere}}</td>
+                                <td>{{demande.annee}}</td>
+                                <td><i class="fa fa-external-link" style="font-size: 1em;" (click)="viewMore(demande)"></i></td>
+
+                            </tr>
+
+
+                        </tbody>
+                    </ng-container>
+                    <ng-template #elseBlock>
+                        <ng-container *ngIf="demandes === undefined && demandes === null">
+                            <h1>Aucune demande trouvé</h1>
+                        </ng-container>
+                    </ng-template>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

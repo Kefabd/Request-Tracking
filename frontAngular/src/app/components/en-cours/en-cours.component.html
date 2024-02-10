@@ -1,0 +1,80 @@
+<ng-container *ngIf="role === 'admin'">
+    <div class="container-fluid mt-5">
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <h3 class="box-title mb-0">Demandes En Attente</h3>
+                        
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no-wrap" id="cycle-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Réference</th>
+                                    <th class="border-top-0">Statut</th>
+                                    <th class="border-top-0">Type</th>
+                                    <th class="border-top-0">Description</th>
+                                    <th class="border-top-0">Niveau</th>
+                                    <th class="border-top-0">Filiére</th>
+                                    <th class="border-top-0">Année</th>
+                                    <th class="border-top-0"> </th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let pending of pendingData">
+                                <tr>
+                                    <td class="border-top-0">{{pending.id}}</td>
+                                    <td class="border-top-0">{{pending.etat}}</td>
+                                    <td class="border-top-0">{{pending.type_document}}</td>
+                                    <td class="border-top-0">{{pending.description}}</td>
+                                    <td class="border-top-0">{{pending.niveau}}</td>
+                                    <td class="border-top-0">{{pending.filiere}}</td>
+                                    <td class="border-top-0">{{pending.annee}}</td>
+                                    <td class="border-top-0"><i class="fa-solid fa-caret-down arrow-bottom" (click)="handleClickRow(pending)"></i></td>
+                                </tr>
+                                <tr *ngIf="selectedDemande === pending && displayDetails && openDetails" @fadeInOut>
+                                    <td colspan="8" >
+                                        <div class="row p-4 moreInfo mx-auto my-3">
+                                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                                <h5 class="test-center mb-4">Informations sur  <i>{{currentEtudiant.nom}} {{currentEtudiant.prenom}}</i></h5>
+                                                   <img [src]="currentEtudiant.image" alt="image etudiant"
+                                                    style="float: left; width: 150px; margin-right: 15px;">
+                                                    <span>
+                                                        <p><b>Code apogee</b>:{{ currentEtudiant.code_apogee }}</p>
+                                                        <p><b>CNE</b> : {{currentEtudiant.cne}} </p>
+                                                        <p><b>Nom</b> : {{currentEtudiant.nom}} </p>
+                                                        <p><b>prenom</b> : {{currentEtudiant.prenom}} </p>
+                                                        <p><b>Filiere</b> : {{pending.filiere}} </p>
+                                                        <p><b>Niveau</b> : {{pending.niveau}} </p>
+                                                    </span>
+ 
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                                <h5 class="text-center mb-5">Plus d'information sur {{pending.type_document}}</h5>
+                                                <span *ngFor="let infos of infosType" class="mt-4">
+                                                    <ng-container *ngFor="let item of infos | keyvalue">
+                                                        <p><b>{{ item.key }}</b> : {{ item.value }}</p>
+                                                    </ng-container>
+                                                </span>
+                                                <button type="button" class="btn btn-primary mt-4"
+                                                    (click)="validerDemande(pending)">Valider</button>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="role === 'etudiant'">
+    <app-encours2></app-encours2>
+</ng-container>
