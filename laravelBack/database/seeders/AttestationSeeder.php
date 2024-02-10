@@ -13,11 +13,6 @@ class AttestationSeeder extends Seeder
      */
     public function run(): void
     {
-        AttestationBourse::create([
-            'annee' => now(),
-            'lieu_de_naissance' => "Casablancai",
-            'type_bourse' => "Type l3a9a",
-            'demande_id' => 3, // Assuming there are existing Demande records with IDs 1 to $numberOfRecords
-        ]);
+        
     }
 }

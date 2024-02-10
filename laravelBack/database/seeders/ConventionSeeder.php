@@ -13,12 +13,6 @@ class ConventionSeeder extends Seeder
      */
     public function run(): void
     {
-        ConventionStage::create([
-            'societe' => 'ONEE',
-            'date_debut' => now(),
-            'date_fin' => now(),
-            'demande_id'=> 1,
-
-        ]);
+        
     }
 }

@@ -13,10 +13,6 @@ class CertificatSeeder extends Seeder
      */
     public function run(): void
     {
-        CertificatScolarite::create([
-            'date' => now(),
-            'lieu_de_naissance' => "Casablanca",
-            'demande_id' => 4, // Assuming there are existing Demande records with IDs 1 to $numberOfRecords
-        ]);
+       
     }
 }
